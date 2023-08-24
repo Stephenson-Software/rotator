@@ -10,7 +10,7 @@ def printNumbers(inputList):
     print(toPrint)
 
 def run():
-    numRotations = 87
+    numRotations = 1
     print("Num rotations: " + str(numRotations) + "\n")
 
     numbers = [1, 2, 3, 4, 5, 6]
@@ -18,13 +18,13 @@ def run():
     rotator = Rotator()
     
     print("Before:")
-    rotator.printNumbers(numbers)
+    printNumbers(numbers)
     print("")
 
     rotator.rotateRepeat(numbers, numRotations)
     
     print("After:")
-    rotator.printNumbers(numbers)
+    printNumbers(numbers)
     print("")
 
 run()

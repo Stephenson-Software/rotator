@@ -13,6 +13,6 @@ class Rotator:
 
         inputList[numItems - 1] = firstItem
     
-    def rotateRepeat(self, numbers, numRotations):
+    def rotateRepeat(self, inputList, numRotations):
         for i in range(numRotations):
-            self.rotate(numbers)
+            self.rotate(inputList)
