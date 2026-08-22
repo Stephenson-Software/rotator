@@ -1,3 +1,5 @@
+import pytest
+
 from rotator import Rotator
 
 rotator = Rotator()
@@ -66,3 +68,53 @@ def test_letters_1r():
     letters = ['a', 'b', 'c']
     rotator.rotateRepeat(letters, 1)
     assert letters == ['b', 'c', 'a']
+
+def test_rotate_123456_direct():
+    numbers = [1, 2, 3, 4, 5, 6]
+    rotator.rotate(numbers)
+    assert numbers == [2, 3, 4, 5, 6, 1]
+
+def test_rotate_returns_nothing():
+    numbers = [1, 2, 3]
+    assert rotator.rotate(numbers) is None
+
+def test_rotate_mutates_caller_list():
+    numbers = [1, 2, 3]
+    aliasHeldByCaller = numbers
+    rotator.rotate(numbers)
+    assert aliasHeldByCaller == [2, 3, 1]
+
+def test_rotate_single_item():
+    numbers = [7]
+    rotator.rotate(numbers)
+    assert numbers == [7]
+
+def test_rotate_empty_raises():
+    numbers = []
+    with pytest.raises(IndexError):
+        rotator.rotate(numbers)
+
+def test_123456_0r():
+    numbers = [1, 2, 3, 4, 5, 6]
+    rotator.rotateRepeat(numbers, 0)
+    assert numbers == [1, 2, 3, 4, 5, 6]
+
+def test_123456_negative_3r():
+    numbers = [1, 2, 3, 4, 5, 6]
+    rotator.rotateRepeat(numbers, -3)
+    assert numbers == [1, 2, 3, 4, 5, 6]
+
+def test_empty_0r():
+    numbers = []
+    rotator.rotateRepeat(numbers, 0)
+    assert numbers == []
+
+def test_empty_1r_raises():
+    numbers = []
+    with pytest.raises(IndexError):
+        rotator.rotateRepeat(numbers, 1)
+
+def test_single_item_5r():
+    numbers = [7]
+    rotator.rotateRepeat(numbers, 5)
+    assert numbers == [7]
