@@ -80,10 +80,9 @@ def test_rotate_returns_nothing():
 
 def test_rotate_mutates_caller_list():
     numbers = [1, 2, 3]
-    sameList = numbers
+    aliasHeldByCaller = numbers
     rotator.rotate(numbers)
-    assert sameList is numbers
-    assert numbers == [2, 3, 1]
+    assert aliasHeldByCaller == [2, 3, 1]
 
 def test_rotate_single_item():
     numbers = [7]
