@@ -89,6 +89,11 @@ def test_rotate_single_item():
     rotator.rotate(numbers)
     assert numbers == [7]
 
+def test_rotate_two_items():
+    numbers = [1, 2]
+    rotator.rotate(numbers)
+    assert numbers == [2, 1]
+
 def test_rotate_empty_raises():
     numbers = []
     with pytest.raises(IndexError):
@@ -118,3 +123,34 @@ def test_single_item_5r():
     numbers = [7]
     rotator.rotateRepeat(numbers, 5)
     assert numbers == [7]
+
+def test_rotateRepeat_returns_nothing():
+    numbers = [1, 2, 3]
+    assert rotator.rotateRepeat(numbers, 2) is None
+
+def test_rotateRepeat_mutates_caller_list():
+    numbers = [1, 2, 3]
+    aliasHeldByCaller = numbers
+    rotator.rotateRepeat(numbers, 2)
+    assert aliasHeldByCaller == [3, 1, 2]
+
+def test_rotateRepeat_float_rotations_raises():
+    numbers = [1, 2, 3]
+    with pytest.raises(TypeError):
+        rotator.rotateRepeat(numbers, 1.5)
+
+def test_rotateRepeat_string_rotations_raises():
+    numbers = [1, 2, 3]
+    with pytest.raises(TypeError):
+        rotator.rotateRepeat(numbers, "2")
+
+def test_rotate_instances_are_independent():
+    firstRotator = Rotator()
+    secondRotator = Rotator()
+    firstNumbers = [1, 2, 3]
+    secondLetters = ['a', 'b', 'c']
+    firstRotator.rotate(firstNumbers)
+    secondRotator.rotate(secondLetters)
+    firstRotator.rotate(firstNumbers)
+    assert firstNumbers == [3, 1, 2]
+    assert secondLetters == ['b', 'c', 'a']

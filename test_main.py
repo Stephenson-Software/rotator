@@ -35,6 +35,14 @@ def test_printNumbers_does_not_mutate(capsys):
     capsys.readouterr()
     assert numbers == [1, 2, 3]
 
+def test_printNumbers_mixed_types(capsys):
+    printNumbers([None, True, 'a', 2.5])
+    assert capsys.readouterr().out == "[None, True, a, 2.5]\n"
+
+def test_printNumbers_returns_nothing(capsys):
+    assert printNumbers([1, 2]) is None
+    capsys.readouterr()
+
 def test_printNumbers_empty_raises():
     with pytest.raises(IndexError):
         printNumbers([])
