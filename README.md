@@ -30,8 +30,10 @@ After:
 ```
 
 ## Running the tests
-The tests are written for pytest and must be run from the repository root, since `test_rotator.py` and `test_main.py` import `rotator` and `main` as top-level modules and the repository has no packaging or `conftest.py` to place them on the import path.
+The tests are written for pytest.
 
 ```
 python3 -m pytest
 ```
+
+Run that from the repository root, or pass the repository path from any other directory (`python3 -m pytest path/to/rotator`). The repository has no packaging and no `conftest.py`, but pytest prepends the directory holding each test file to `sys.path`, so `test_rotator.py` and `test_main.py` import `rotator` and `main` as top-level modules either way.
