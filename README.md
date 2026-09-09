@@ -37,3 +37,8 @@ python3 -m pytest
 ```
 
 Run that from the repository root, or pass the repository path from any other directory (`python3 -m pytest path/to/rotator`). The repository has no packaging and no `conftest.py`, but pytest prepends the directory holding each test file to `sys.path`, so `test_rotator.py` and `test_main.py` import `rotator` and `main` as top-level modules either way.
+
+## License
+This project is licensed under the Stephenson Software Non-Commercial License (Stephenson-NC). Use, copying, modification, and distribution are permitted for non-commercial purposes only, and commercial use by any party other than the copyright holder requires explicit written permission.
+
+The terms that apply to this repository are in [`LICENSE`](LICENSE). The full license text is published at https://github.com/Stephenson-Software/stephenson-nc-license.
