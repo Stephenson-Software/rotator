@@ -1,3 +1,5 @@
+# @author Daniel McCoy Stephenson
+# @since 8/24/2023
 from rotator import Rotator
 
 def printNumbers(inputList):

@@ -1,3 +1,5 @@
+# @author Daniel McCoy Stephenson
+# @since 8/24/2023
 import pytest
 
 from rotator import Rotator
