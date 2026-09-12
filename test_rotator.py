@@ -156,3 +156,35 @@ def test_rotate_instances_are_independent():
     firstRotator.rotate(firstNumbers)
     assert firstNumbers == [3, 1, 2]
     assert secondLetters == ['b', 'c', 'a']
+
+def test_rotate_tuple_raises():
+    numbers = (1, 2, 3)
+    with pytest.raises(TypeError):
+        rotator.rotate(numbers)
+
+def test_rotate_string_raises():
+    letters = "abc"
+    with pytest.raises(TypeError):
+        rotator.rotate(letters)
+
+def test_rotateRepeat_tuple_raises():
+    numbers = (1, 2, 3)
+    with pytest.raises(TypeError):
+        rotator.rotateRepeat(numbers, 1)
+
+def test_rotate_moves_elements_by_reference():
+    first = object()
+    second = object()
+    third = object()
+    items = [first, second, third]
+    rotator.rotate(items)
+    assert items[0] is second
+    assert items[1] is third
+    assert items[2] is first
+
+def test_rotateRepeat_nested_list_is_not_copied():
+    inner = [1, 2]
+    nested = [inner, 3, 4]
+    rotator.rotateRepeat(nested, 2)
+    assert nested == [4, [1, 2], 3]
+    assert nested[1] is inner
