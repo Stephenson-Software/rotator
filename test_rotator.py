@@ -188,3 +188,30 @@ def test_rotateRepeat_nested_list_is_not_copied():
     rotator.rotateRepeat(nested, 2)
     assert nested == [4, [1, 2], 3]
     assert nested[1] is inner
+
+class MoveCountingList(list):
+    def __init__(self, items):
+        super().__init__(items)
+        self.numMoves = 0
+
+    def __setitem__(self, index, value):
+        self.numMoves += 1
+        super().__setitem__(index, value)
+
+def test_rotate_123456_uses_6_moves():
+    numbers = MoveCountingList([1, 2, 3, 4, 5, 6])
+    rotator.rotate(numbers)
+    assert numbers == [2, 3, 4, 5, 6, 1]
+    assert numbers.numMoves == 6
+
+def test_rotate_single_item_uses_1_move():
+    numbers = MoveCountingList([7])
+    rotator.rotate(numbers)
+    assert numbers == [7]
+    assert numbers.numMoves == 1
+
+def test_123456_2r_uses_12_moves():
+    numbers = MoveCountingList([1, 2, 3, 4, 5, 6])
+    rotator.rotateRepeat(numbers, 2)
+    assert numbers == [3, 4, 5, 6, 1, 2]
+    assert numbers.numMoves == 12
