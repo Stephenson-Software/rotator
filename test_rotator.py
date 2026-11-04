@@ -215,3 +215,31 @@ def test_123456_2r_uses_12_moves():
     rotator.rotateRepeat(numbers, 2)
     assert numbers == [3, 4, 5, 6, 1, 2]
     assert numbers.numMoves == 12
+
+def test_123456_7r_uses_6_moves():
+    numbers = MoveCountingList([1, 2, 3, 4, 5, 6])
+    rotator.rotateRepeat(numbers, 7)
+    assert numbers == [2, 3, 4, 5, 6, 1]
+    assert numbers.numMoves == 6
+
+def test_123456_87r_uses_18_moves():
+    numbers = MoveCountingList([1, 2, 3, 4, 5, 6])
+    rotator.rotateRepeat(numbers, 87)
+    assert numbers == [4, 5, 6, 1, 2, 3]
+    assert numbers.numMoves == 18
+
+def test_123456_6r_uses_0_moves():
+    numbers = MoveCountingList([1, 2, 3, 4, 5, 6])
+    rotator.rotateRepeat(numbers, 6)
+    assert numbers == [1, 2, 3, 4, 5, 6]
+    assert numbers.numMoves == 0
+
+def test_rotateRepeat_float_rotations_above_length_raises():
+    numbers = [1, 2, 3]
+    with pytest.raises(TypeError):
+        rotator.rotateRepeat(numbers, 6.0)
+
+def test_rotateRepeat_tuple_whole_cycle_is_noop():
+    numbers = (1, 2, 3)
+    rotator.rotateRepeat(numbers, 3)
+    assert numbers == (1, 2, 3)
