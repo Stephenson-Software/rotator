@@ -14,5 +14,11 @@ class Rotator:
         inputList[numItems - 1] = firstItem
     
     def rotateRepeat(self, inputList, numRotations):
+        numItems = len(inputList)
+
+        # every numItems rotations restore the list, so whole cycles are skipped
+        if (numItems > 0 and numRotations >= numItems):
+            numRotations = numRotations % numItems
+
         for i in range(numRotations):
             self.rotate(inputList)

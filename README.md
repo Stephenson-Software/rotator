@@ -7,10 +7,10 @@ Try solving this without creating a copy of the list. How many swap or move oper
 `Rotator` in `rotator.py` rotates a list to the left, in place, without creating a copy of it.
 
 - `rotate(inputList)` shifts every element one position to the left and moves the original first element to the end. The caller's list is mutated and nothing is returned.
-- `rotateRepeat(inputList, numRotations)` calls `rotate` on the list `numRotations` times.
+- `rotateRepeat(inputList, numRotations)` calls `rotate` on the list `numRotations` times, skipping whole cycles: every `n` rotations of an `n`-element list restore the original order, so a count of `n` or more is first reduced modulo `n`.
 
 ### Move count
-`rotate` saves the first element, shifts the remaining `n - 1` elements one position to the left, and then writes the saved element into the last position — `n` moves for a list of `n` elements. `rotateRepeat` repeats that, so rotating by `k` costs `n * k` moves.
+`rotate` saves the first element, shifts the remaining `n - 1` elements one position to the left, and then writes the saved element into the last position — `n` moves for a list of `n` elements. `rotateRepeat` repeats that `k mod n` times, so rotating by a non-negative `k` costs `n * (k mod n)` moves.
 
 ## Running the demo
 ```
