@@ -243,3 +243,23 @@ def test_rotateRepeat_tuple_whole_cycle_is_noop():
     numbers = (1, 2, 3)
     rotator.rotateRepeat(numbers, 3)
     assert numbers == (1, 2, 3)
+
+def test_single_item_5r_uses_0_moves():
+    numbers = MoveCountingList([7])
+    rotator.rotateRepeat(numbers, 5)
+    assert numbers == [7]
+    assert numbers.numMoves == 0
+
+def test_empty_negative_1r():
+    numbers = []
+    rotator.rotateRepeat(numbers, -1)
+    assert numbers == []
+
+def test_rotateRepeat_string_whole_cycle_is_noop():
+    letters = "abc"
+    rotator.rotateRepeat(letters, 3)
+    assert letters == "abc"
+
+def test_rotateRepeat_unsized_zero_rotations_raises():
+    with pytest.raises(TypeError):
+        rotator.rotateRepeat(None, 0)
