@@ -13,7 +13,7 @@ def printNumbers(inputList):
     print(toPrint)
 
 def run():
-    """Rotate the demo list once and print it before and after."""
+    """Rotate the demo list and print it before and after."""
     numRotations = 1
     print("Num rotations: " + str(numRotations) + "\n")
 
