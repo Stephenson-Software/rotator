@@ -3,6 +3,7 @@
 from rotator import Rotator
 
 def printNumbers(inputList):
+    """Print the items of inputList in the form [1, 2, 3]."""
     numItems = len(inputList)
 
     toPrint = "["
@@ -12,6 +13,7 @@ def printNumbers(inputList):
     print(toPrint)
 
 def run():
+    """Rotate the demo list and print it before and after."""
     numRotations = 1
     print("Num rotations: " + str(numRotations) + "\n")
 
