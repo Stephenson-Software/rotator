@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="222" viewBox="0 0 420 222" role="img" aria-label="rotator: python3 main.py">
+<rect width="420" height="222" rx="8" fill="#1e1f24"/>
+<rect width="420" height="30" rx="8" fill="#2c2e35"/>
+<rect y="22" width="420" height="8" fill="#2c2e35"/>
+<circle cx="18" cy="15" r="5.5" fill="#ff5f57"/>
+<circle cx="36" cy="15" r="5.5" fill="#febc2e"/>
+<circle cx="54" cy="15" r="5.5" fill="#28c840"/>
+<text x="210.0" y="20" text-anchor="middle" fill="#9aa0ab" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">rotator: python3 main.py</text>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14">
+<text x="16" y="60"><tspan fill="#7ee787">$ </tspan><tspan fill="#e6edf3">python3 main.py</tspan></text>
+<text x="16" y="80" fill="#c9d1d9">Num rotations: 1</text>
+<text x="16" y="100" fill="#c9d1d9"></text>
+<text x="16" y="120" fill="#c9d1d9">Before:</text>
+<text x="16" y="140" fill="#c9d1d9">[1, 2, 3, 4, 5, 6]</text>
+<text x="16" y="160" fill="#c9d1d9"></text>
+<text x="16" y="180" fill="#c9d1d9">After:</text>
+<text x="16" y="200" fill="#c9d1d9">[2, 3, 4, 5, 6, 1]</text>
+</g></svg>

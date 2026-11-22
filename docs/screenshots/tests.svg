@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="711" height="122" viewBox="0 0 711 122" role="img" aria-label="rotator: python3 -m pytest -q">
+<rect width="711" height="122" rx="8" fill="#1e1f24"/>
+<rect width="711" height="30" rx="8" fill="#2c2e35"/>
+<rect y="22" width="711" height="8" fill="#2c2e35"/>
+<circle cx="18" cy="15" r="5.5" fill="#ff5f57"/>
+<circle cx="36" cy="15" r="5.5" fill="#febc2e"/>
+<circle cx="54" cy="15" r="5.5" fill="#28c840"/>
+<text x="355.5" y="20" text-anchor="middle" fill="#9aa0ab" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12">rotator: python3 -m pytest -q</text>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="14">
+<text x="16" y="60"><tspan fill="#7ee787">$ </tspan><tspan fill="#e6edf3">python3 -m pytest -q</tspan></text>
+<text x="16" y="80" fill="#c9d1d9">.......................................................                  [100%]</text>
+<text x="16" y="100" fill="#c9d1d9">55 passed in 0.35s</text>
+</g></svg>
